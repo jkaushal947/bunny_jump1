@@ -178,8 +178,8 @@ export default class Game extends Phaser.Scene {
             this.heightPointText.text = this.heightPoint + ' m'
         }
 
-        // Show an alert modal when score reaches 200
-        if (carrotCollected === 200) {
+        // Show an alert modal when score reaches 20
+        if (this.carrotCollected === 20) {
             this.sound.stopAll()
             this.scene.start('win', {
                 heightPoint: this.heightPoint,
