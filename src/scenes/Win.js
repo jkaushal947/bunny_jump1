@@ -1,6 +1,6 @@
 import Phaser from '../lib/phaser.js'
 
-export default class GameOver extends Phaser.Scene {
+export default class Win extends Phaser.Scene {
     heightPoint
     carrotCollected
     text
