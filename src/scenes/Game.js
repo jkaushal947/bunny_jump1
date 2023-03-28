@@ -36,6 +36,9 @@ export default class Game extends Phaser.Scene {
 
         // load the carrot image
         this.load.image('carrot', 'assets/sprites/carrot_1.png')
+        
+        //load effect
+        this.load.atlas('megaset', 'assets/megaset-0.png', 'assets/megaset-0.json');
 
         // get key down
         this.cursors = this.input.keyboard.createCursorKeys()
@@ -133,6 +136,42 @@ export default class Game extends Phaser.Scene {
         this.heightPointText = this.add.text(460, 35, this.heightPoint + ' m', style)
             .setScrollFactor(0)
             .setOrigin(1, 0.5)
+        
+        this.add.particles('megaset', [
+        {
+            frame: 'red_ball',
+            x: 400,
+            y: 590,
+            angle: { min: 180, max: 360 },
+            speed: 200,
+            gravityY: -350,
+            lifespan: 3000,
+            quantity: 4,
+            scale: { min: 0.1, max: 1 }
+        },
+        {
+            frame: 'yellow_ball',
+            x: 400,
+            y: 590,
+            angle: { min: 180, max: 360 },
+            speed: 300,
+            gravityY: -350,
+            lifespan: 3000,
+            quantity: 4,
+            scale: { min: 0.1, max: 1 }
+        },
+        {
+            frame: 'blue_ball',
+            x: 400,
+            y: 590,
+            angle: { min: 180, max: 360 },
+            speed: 400,
+            gravityY: -350,
+            lifespan: 3000,
+            quantity: 4,
+            scale: { min: 0.1, max: 1 }
+        }
+    ]);
     }
 
     update(time, deltaTime) {
@@ -255,6 +294,9 @@ export default class Game extends Phaser.Scene {
 
         // sound effect
         this.sound.play('collect-carrot')
+        
+        //carrot effect
+        this.add.particles('megaset')
     }
 
     // find the bottom most platform 
