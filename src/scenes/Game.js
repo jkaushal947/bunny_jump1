@@ -38,7 +38,7 @@ export default class Game extends Phaser.Scene {
         this.load.image('carrot', 'assets/sprites/carrot_1.png')
         
         //load effect
-        this.load.atlas('megaset', 'assets/megaset-0.png', 'assets/megaset-0.json');
+        this.load.atlas('megaset', 'assets/megaset-0.png', 'assets/megaset-0.json')
 
         // get key down
         this.cursors = this.input.keyboard.createCursorKeys()
