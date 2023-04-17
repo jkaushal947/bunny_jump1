@@ -278,6 +278,9 @@ export default class Game extends Phaser.Scene {
      * @param {Carrot} carrot
      */
     handleCollectCarrot(player, carrot) {
+        //carrot effect
+        this.add.particles(carrot.body.position.x, carrot.body.position.y, 'megaset')
+        
         // hide from display
         this.carrots.killAndHide(carrot)
 
@@ -295,8 +298,6 @@ export default class Game extends Phaser.Scene {
         // sound effect
         this.sound.play('collect-carrot')
         
-        //carrot effect
-        this.add.particles('megaset')
     }
 
     // find the bottom most platform 
