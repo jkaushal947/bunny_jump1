@@ -278,8 +278,6 @@ export default class Game extends Phaser.Scene {
      * @param {Carrot} carrot
      */
     handleCollectCarrot(player, carrot) {
-        //carrot effect
-        this.add.particles(carrot.body.position.x, carrot.body.position.y, 'megaset')
         
         // hide from display
         this.carrots.killAndHide(carrot)
@@ -289,6 +287,7 @@ export default class Game extends Phaser.Scene {
 
         // increment by 1
         this.carrotCollected++
+        this.add.particles(carrot.body.position.x, carrot.body.position.y, 'megaset')
 
         // update the score
         //124, 20, ' × 0', style
