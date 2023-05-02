@@ -136,60 +136,6 @@ export default class Game extends Phaser.Scene {
         this.heightPointText = this.add.text(460, 35, this.heightPoint + ' m', style)
             .setScrollFactor(0)
             .setOrigin(1, 0.5)
-
-        this.add.particles('megaset', [
-            {
-                frame: 'red_ball',
-                x: 400,
-                y: 590,
-                angle: {
-                    min: 180,
-                    max: 360
-                },
-                speed: 200,
-                gravityY: -350,
-                lifespan: 3000,
-                quantity: 4,
-                scale: {
-                    min: 0.1,
-                    max: 1
-                }
-        },
-            {
-                frame: 'yellow_ball',
-                x: 400,
-                y: 590,
-                angle: {
-                    min: 180,
-                    max: 360
-                },
-                speed: 300,
-                gravityY: -350,
-                lifespan: 3000,
-                quantity: 4,
-                scale: {
-                    min: 0.1,
-                    max: 1
-                }
-        },
-            {
-                frame: 'blue_ball',
-                x: 400,
-                y: 590,
-                angle: {
-                    min: 180,
-                    max: 360
-                },
-                speed: 400,
-                gravityY: -350,
-                lifespan: 3000,
-                quantity: 4,
-                scale: {
-                    min: 0.1,
-                    max: 1
-                }
-        }
-    ]);
     }
 
     update(time, deltaTime) {
@@ -298,7 +244,25 @@ export default class Game extends Phaser.Scene {
     
     handleCollectCarrot(player, carrot) {
 
-        this.add.particles(carrot.body.position.x, carrot.body.position.y, 'megaset')
+        this.add.particles('carrotCollected', [
+            {
+                frame: 'red_ball',
+                x: carrot.body.position.x,
+                y: carrot.body.position.y,
+                angle: {
+                    min: 180,
+                    max: 360
+                },
+                speed: 200,
+                gravityY: -350,
+                lifespan: 3000,
+                quantity: 4,
+                scale: {
+                    min: 0.1,
+                    max: 1
+                }
+        }
+    ])
         // hide from display
         this.carrots.killAndHide(carrot)
 
