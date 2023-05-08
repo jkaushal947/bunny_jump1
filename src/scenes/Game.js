@@ -241,10 +241,10 @@ export default class Game extends Phaser.Scene {
      * @param {Phaser.Physics.Arcade.Sprite} player
      * @param {Carrot} carrot
      */
-    
+
     handleCollectCarrot(player, carrot) {
 
-        this.add.particles('carrotCollected', [
+        this.add.particles('megaset', [
             {
                 frame: 'red_ball',
                 x: carrot.body.position.x,
