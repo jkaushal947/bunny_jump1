@@ -244,7 +244,7 @@ export default class Game extends Phaser.Scene {
 
     handleCollectCarrot(player, carrot) {
 
-        this.add.particles('megaset', [
+        const emitter = this.add.particles('megaset', [
             {
                 frame: 'red_ball',
                 x: carrot.body.position.x,
@@ -264,6 +264,9 @@ export default class Game extends Phaser.Scene {
                 }
         }
     ])
+
+        emitter.emitParticle(20, carrot.body.position.x, carrot.body.position.y);
+
         // hide from display
         this.carrots.killAndHide(carrot)
 
