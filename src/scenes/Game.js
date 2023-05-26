@@ -254,6 +254,7 @@ export default class Game extends Phaser.Scene {
                     max: 360
                 },
                 speed: 200,
+                autoRound: 2,
                 gravityY: -350,
                 lifespan: 3000,
                 frequency: -1,
