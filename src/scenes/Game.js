@@ -31,8 +31,8 @@ export default class Game extends Phaser.Scene {
         this.load.image('platform', 'assets/sprites/ground_grass_1.png')
 
         // load the bunny image
-        this.load.image('bunny-stand', 'assets/sprites/bunny.gif')
-        this.load.image('bunny-jump', 'assets/sprites/bunny.gif')
+        this.load.image('bunny-stand', 'assets/sprites/bunny_1.gif')
+        this.load.image('bunny-jump', 'assets/sprites/bunny_1.gif')
 
         // load the carrot image
         this.load.image('carrot', 'assets/sprites/carrot_1.png')
