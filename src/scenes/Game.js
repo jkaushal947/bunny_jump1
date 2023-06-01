@@ -33,11 +33,7 @@ export default class Game extends Phaser.Scene {
         // load the bunny image
         //this.load.image('bunny-stand', 'assets/sprites/bunny_1.gif')
         //this.load.image('bunny-jump', 'assets/sprites/bunny_1.gif')
-        this.load.spritesheet('bunny',
-            'assets/bunny_sheet.png', {
-                frameWidth: 32,
-                frameHeight: 48
-            })
+        this.load.spritesheet('bunny', 'assets/bunny_sheet.png')
 
         // load the carrot image
         this.load.image('carrot', 'assets/sprites/carrot_1.png')
