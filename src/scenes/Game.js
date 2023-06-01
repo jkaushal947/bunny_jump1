@@ -31,8 +31,13 @@ export default class Game extends Phaser.Scene {
         this.load.image('platform', 'assets/sprites/ground_grass_1.png')
 
         // load the bunny image
-        this.load.image('bunny-stand', 'assets/sprites/bunny_1.gif')
-        this.load.image('bunny-jump', 'assets/sprites/bunny_1.gif')
+        //this.load.image('bunny-stand', 'assets/sprites/bunny_1.gif')
+        //this.load.image('bunny-jump', 'assets/sprites/bunny_1.gif')
+        this.load.spritesheet('bunny'
+            'assets/bunny_sheet.png', {
+                frameWidth: 32,
+                frameHeight: 48
+            })
 
         // load the carrot image
         this.load.image('carrot', 'assets/sprites/carrot_1.png')
@@ -75,7 +80,7 @@ export default class Game extends Phaser.Scene {
         }
 
         // create bunny - the player
-        this.player = this.physics.add.sprite(240, this.lastHeight, 'bunny-stand').setScale(0.5)
+        this.player = this.physics.add.sprite(240, this.lastHeight, 'bunny').setScale(0.5)
 
         // create a carrot
         this.carrots = this.physics.add.group({
@@ -107,7 +112,7 @@ export default class Game extends Phaser.Scene {
                 this.player.setVelocityY(-460)
 
                 // jumping animation
-                this.player.setTexture('bunny-jump')
+                this.player.setTexture('bunny')
 
                 // jumping sound effect
                 this.sound.play('jump')
@@ -159,8 +164,8 @@ export default class Game extends Phaser.Scene {
 
         // stand animation
         const vy = this.player.body.velocity.y
-        if (vy > 0 && this.player.texture.key !== 'bunny-stand')
-            this.player.setTexture('bunny-stand')
+        if (vy > 0 && this.player.texture.key !== 'bunny')
+            this.player.setTexture('bunny')
 
         // left and right input logic
         if (this.cursors.left.isDown && !this.player.body.touching.down) {
