@@ -81,6 +81,41 @@ export default class Game extends Phaser.Scene {
         // create bunny - the player
         this.player = this.physics.add.sprite(240, this.lastHeight, 'bunny').setScale(0.5)
 
+        //  Player physics properties. Give the little guy a slight bounce.
+        player.setBounce(0.2);
+        player.setCollideWorldBounds(true);
+
+        //  Our player animations, turning, walking left and walking right.
+        this.anims.create({
+            key: 'left',
+            frames: this.anims.generateFrameNumbers('bunny', {
+                start: 0,
+                end: 3
+            }),
+            frameRate: 10,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'turn',
+            frames: [{
+                key: 'bunny',
+                frame: 4
+            }],
+            frameRate: 20
+        });
+
+        this.anims.create({
+            key: 'right',
+            frames: this.anims.generateFrameNumbers('bunny', {
+                start: 5,
+                end: 8
+            }),
+            frameRate: 10,
+            repeat: -1
+        });
+
+
         // create a carrot
         this.carrots = this.physics.add.group({
             classType: Carrot
