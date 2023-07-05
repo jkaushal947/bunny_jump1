@@ -82,8 +82,8 @@ export default class Game extends Phaser.Scene {
         this.player = this.physics.add.sprite(240, this.lastHeight, 'bunny').setScale(0.5)
 
         //  Player physics properties. Give the little guy a slight bounce.
-        player.setBounce(0.2);
-        player.setCollideWorldBounds(true);
+        this.player.setBounce(0.2);
+        this.player.setCollideWorldBounds(true);
 
         //  Our player animations, turning, walking left and walking right.
         this.anims.create({
