@@ -83,7 +83,7 @@ export default class Game extends Phaser.Scene {
 
         //  Player physics properties. Give the little guy a slight bounce.
         this.player.setBounce(0.2);
-        this.player.setCollideWorldBounds(true);
+        this.player.setCollideWorldBounds(false);
 
         //  Our player animations, turning, walking left and walking right.
         this.anims.create({
